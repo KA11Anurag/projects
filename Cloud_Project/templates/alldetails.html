@@ -1,0 +1,37 @@
+{% extends 'temp.html' %}
+{% block form_head %}All Details{% endblock %}
+{% block content %}
+    {% if all_results %}
+        <!-- Display all stored results -->
+        <ul>
+            {% for result in all_results %}
+                <li>{{result}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+    <!-- Form for viewing and deleting data based on vehicle_model_id -->
+    <form action="/alldetails" method="post">
+        <label for="user_name">Username:</label>
+        <input type="text" name="user_name" required>
+
+        <input type="submit" name="action" value="View Data">
+        <input type="submit" name="action" value="Delete Data">
+    </form>
+{% endblock %}
+{% block extra %}
+    <!-- Refresh button to clear the displayed results -->
+{% block form_name %}
+    <form action="/alldetails" method="get">
+{% endblock %}
+        <input type="submit" value="Refresh">
+    </form>
+
+    <!-- Redirect button back to the home page -->
+    <a href="/">Back to Home</a>
+
+    {% if show_message %}
+        <p>No records found</p>
+    {% endif %}
+{% endblock %}

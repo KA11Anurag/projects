@@ -1,0 +1,30 @@
+{% extends 'temp.html' %}
+{% block form_head %}Carbon Interface API Form{% endblock %}
+{% block content %}
+        <div class="container_grid">
+            <label id="cust_label" for="customer_name">Name :</label>
+            <input id="cust_inp" type="text" name="customer_name" required>
+
+            <label id="vma_label" for="vehicle_make">Brand :</label>
+            <input id="vma_inp" type="text" name="vehicle_make" required>
+
+            <label id="vmo_label" for="vehicle_model">Model : </label>
+            <input id="vmo_inp" type="text" name="vehicle_model" required>
+            
+            <label id="year_label" for="year">Year :</label>
+            <input id="year_inp" type="number" name="year" required>
+
+            <label id="dist_label" for="distance_value">Distance :</label>
+            <input id="dist_inp" type="number" name="distance_value" min="0" step="0.1" required>
+            <select id="dist_sel" name="distance_unit">
+                <option value="km">km</option>
+                <option value="mi">miles</option>
+            </select>
+
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
+    </div>
+</body>
+</html>

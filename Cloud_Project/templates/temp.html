@@ -1,0 +1,30 @@
+<!-- temp.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="shorcut icon" href="/static/favicon.ico"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Interface API</title>
+</head>
+<body>
+    <ul>
+        <li><a  href="/">Home</a></li>
+        <li><a href="/fetch_landing">Retrieve Data</a></li>
+        <li><a href="/del_landing">Delete Data</a></li>
+        <li><a href="/view_plots">View Plots</a></li>
+    </ul>
+     
+    <div class="container_v">
+        {% block form_name %}
+        <form  action="/fetch_and_display" method="post" enctype="application/x-www-form-urlencoded">
+        {% endblock %}
+            <h1>{% block form_head %}{% endblock %}</h1>
+            {% block content %}{% endblock %}
+        </form>
+        <div class="filler"></div>
+        {% block extra %}{% endblock %}
+    </div>
+</body>
+</html>
